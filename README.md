@@ -27,3 +27,5 @@ The project draws inspiration from the recommendation systems employed by leadin
    ```bash
    git clone https://github.com/your-username/recommendation-system.git
    cd recommendation-system
+
+![show_recommendation](https://github.com/user-attachments/assets/b968d258-6095-4463-b745-e811fc2c01ab)
