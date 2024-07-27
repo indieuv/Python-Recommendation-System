@@ -1,18 +1,17 @@
-profile_path = "data/profiles/"
+profilepath = 'profiles/'
 
-# get the name of the user
-def get_name():
-    name = input("\n-> Enter your name : ")
+def getname():
+    name = input(":: Enter your name : ")
     return name
 
-# read a data in a text file
-def read_file(file_path):
+# read a file
+def readfile(file):
     data = []
-    with open(file_path, 'r') as file:
-        data  = file.readlines()
+    with open(file, 'r') as f:
+        data = f.readlines()
     return data
 
-# write data in a txt file
-def write_file(file_path, data):
-    with open(file_path, 'a') as file:
-        file.write(f"{data}\n")
+# write file
+def writefile(file, request):
+    with open(file, 'a') as f:
+        f.write(f'{request}\n')
