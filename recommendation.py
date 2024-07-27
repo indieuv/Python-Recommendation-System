@@ -1,5 +1,6 @@
 import main
 import utilities
+import matplotlib.pyplot as plt
 import os
 
 dataset = {
@@ -15,6 +16,25 @@ dataset = {
     'Eco3': ['Market', 0],
     'Eco4': ['Stocks', 0]
 }
+
+def plotdataset(category):
+    tokens = []
+    ratings = []
+    
+    for theme, data in dataset.items():
+        if theme.startswith(category):
+            tokens.append(data[0])
+            ratings.append(data[1])
+
+    # Create A Data Plot
+    plt.figure(figsize=(10, 6))
+    # Create a Bar Plot
+    plt.barh(tokens, ratings, color='skyblue')
+
+    plt.xlabel('Rating')
+    plt.ylabel('Token')
+    plt.title(f'{category} Category')
+    plt.show()
 
 def increaseUserfeed():
     name = utilities.getname()
@@ -80,6 +100,9 @@ if __name__ == '__main__':
     choice = input("\n:: Enter Your Choice : ")
     if choice == '1':
         print(dataset)
+        plotdataset('Tech')
+        
+        plotdataset('Eco')
     elif choice == '2':
         increaseUserfeed()
         print(getrecommendation())
